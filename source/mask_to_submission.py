@@ -6,9 +6,70 @@ import matplotlib.image as mpimg
 import re
 import pathlib as pathlib
 from tqdm import tqdm
+from PIL import Image
 
+def check_corner(input_matrix) :
+# define all the corners
+    SW_corner = [[1,0,0],
+                [1,0,0],
+                [1,1,1]]
+    SW_corner = np.array(SW_corner)
+    SE_corner = [[0,0,1],
+                [0,0,1],
+                [1,1,1]]
+    SE_corner = np.array(SE_corner)            
+    NE_corner = [[1,1,1],
+                [0,0,1],
+                [0,0,1]]     
+    NE_corner = np.array(NE_corner)
+    NW_corner = [[1,1,1],
+                [1,0,0],
+                [1,0,0]]  
+    NW_corner = np.array(NW_corner)
+
+    corner = np.array_equal(input_matrix, SW_corner) or np.array_equal(input_matrix, SE_corner) or np.array_equal(input_matrix, NE_corner) or np.array_equal(input_matrix, NW_corner)
+    
+    return corner
 
 foreground_threshold = 0.05 # percentage of pixels > 1 required to assign a foreground label to a patch
+
+
+def fill(im, reverted):
+    threshold = 4
+    bad = 0  # value that we want to get rid of
+    good = 1  # value that we want
+    if reverted == True:  # if the matrix has been inverted, we need to interchange the values
+        bad = 1
+        good = 0
+
+    N = len(im)
+    # added to take into account the border conditions
+    background_matrix = np.zeros((N+2, N+2))
+    # fill the background matrix
+    background_matrix[0, :] = good
+    background_matrix[N+1, :] = good
+    background_matrix[:, 0] = good
+    background_matrix[:, N+1] = good
+
+    background_matrix[1:N+1, 1:N+1] = im
+    im = background_matrix
+    change_matrix =  np.zeros((N+2, N+2))
+
+
+    for i in range(1, N+2):
+        for j in range(1, N+2):
+            surrounding_matrix = im[i-1:i+2, j-1:j+2]
+            if im[i, j] == bad and not(check_corner(surrounding_matrix)):
+                
+                somme = np.sum(surrounding_matrix)
+                change_matrix[i,j] = somme
+
+                if somme > threshold :
+                        im[i, j] = good
+
+    return im[1:N+1,1:N+1]
+
+
 
 # assign a label to a patch
 def patch_to_label(patch,foreground_threshold):
@@ -47,11 +108,22 @@ def mask_to_submission_strings(image_filename,i,foreground_threshold):
     img_number = i
     im = mpimg.imread(image_filename)
     patch_size = 16
+    reduced_size = im.shape[0]/patch_size
+    print(reduced_size)
+    reduced_image = np.zeros((int(reduced_size),int(reduced_size)))
+    
+    # read the image and fill the black squares
     for j in range(0, im.shape[1], patch_size):
         for i in range(0, im.shape[0], patch_size):
             patch = im[i:i + patch_size, j:j + patch_size]
             label = patch_to_label(patch,foreground_threshold)
-            yield("{:03d}_{}_{},{}".format(img_number +1, j, i, int(label)))
+            reduced_image[int(i/patch_size),int(j/patch_size)] = label
+            
+    image = fill(reduced_image, reverted = False)
+            
+    for j in range(0, im.shape[1], patch_size):
+        for i in range(0, im.shape[0], patch_size):
+            yield("{:03d}_{}_{},{}".format(img_number +1, j, i, int(image[int(i/patch_size),int(j/patch_size)])))
 
 
 def masks_to_submission(submission_filename, image_filenames,foreground_threshold = 0.25):
