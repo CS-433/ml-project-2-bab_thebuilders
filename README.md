@@ -13,6 +13,8 @@ This is the repository containing the proposed solution of the team _BAB-thebuil
 ## Pre-trained model
 The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing) along side with the training and test data. 
 
+Once the git is cloned locally, the .zip in the drive just has to be unzipped in the "ml-project-2-bab_thebuilders/source/" directory and should have the right architecture:
+
 The path for the model has to be source/files/model.h5. The test files also need to be in a specific path: /source/test/images/test_"image_id".png
 
 The path for the training data is : /source/training_sat_images/images/satImage_"image_id".png for the images and /source/training_sat_images/masks/satImage_"mask_id".png for the masks.
