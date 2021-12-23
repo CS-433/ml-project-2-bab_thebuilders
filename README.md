@@ -26,14 +26,19 @@ To reproduce the prediction, one needs to run the script run.py with the correct
 
 -Train.main_train()
 
-### Required libraries :
-- numpy (works with 1.18.5)
-- PIL (works with 7.0.0)
-- matplotlib (works with 3.2.2)
-- scipy (works with 1.4.1)
-- sklearn (works with 0.22.2.post1)
-- tensorflow (works with V2.4.0)
+### Required libraries
+ (please use the last version of each package to avoid conflicts)
+- numpy 
+- PIL
+- matplotlib
+- scipy
+- sklearn
+- tensorflow 
 - cv2
 - tqdm
 - TIFFFILE
 - math
+- imutils
+- glob
+- pathlib
+- json
