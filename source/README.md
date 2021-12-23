@@ -8,3 +8,4 @@ This folder contains all the scripts we used to create, build and train our mode
 - `train.py` : contains the functions used to train the model
 - `trainTuning.py` : contains the functions used to tune hyperparameters
 - `utils.py` : contains every helper function we used at some point, such as reading images or loading paths
+- `mask_to_submission.py` : contains the functions to turn the output of the model into the submission file
