@@ -1,7 +1,3 @@
-from google.colab import drive
-drive.mount('/content/drive', force_remount=True)
-%cd "/content/drive/MyDrive/ML/"
-
 import data as data
 from glob import glob
 import model as Model
