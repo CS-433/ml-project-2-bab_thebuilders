@@ -11,7 +11,7 @@ This is the repository containing the proposed solution of the team _BAB-thebuil
 - The bulk of our python functions are in the folder **source**. Detailed explanations are available inside it.
 
 ## Pre-trained model
-The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available here https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing
+The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available here https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing. The path for the model has to be source/files/model.h5
 
 ## How to run the code 
 Note that the provided files do not allow one to reproduce our _best_ submission on AICrowd, since the file containing the corresponding model has been lost. The provided files allow one to reproduce the second best submission we made, which had an F-1 score of __0.834__ and a precision of __0.910__.
