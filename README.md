@@ -23,4 +23,5 @@ Note that the provided files do not allow one to reproduce our _best_ submission
 To reproduce the prediction, one needs to run the script run.py with the correct architecture (mentionned above). To do the data augmentation and train the model one simply needs to decomment the lines in run.py: 
 
 -data.augment_split()
+
 -Train.main_train()
