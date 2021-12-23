@@ -26,7 +26,7 @@ To reproduce the prediction, one needs to run the script run.py with the correct
 
 -Train.main_train()
 
-### Required libraries
+### Libraries used
  (please use the last version of each package to avoid conflicts)
 - numpy 
 - PIL
