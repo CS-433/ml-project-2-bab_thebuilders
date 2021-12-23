@@ -427,6 +427,7 @@ def augment_data(images, masks, save_path, augment=True):
             y17 = augmented['mask']
 
             ## Vertical Flip gray
+            aug = VerticalFlip(p=1)
             augmented = aug(image=x17, mask=y17)
             x18 = augmented['image']
             y18 = augmented['mask']
