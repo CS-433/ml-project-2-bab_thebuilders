@@ -19,3 +19,8 @@ The path for the training data is : /source/training_sat_images/images/satImage_
 
 ## How to run the code 
 Note that the provided files do not allow one to reproduce our _best_ submission on AICrowd, since the file containing the corresponding model has been lost. The provided files allow one to reproduce the second best submission we made (ID 169569), which had an F-1 score of __0.834__ and a precision of __0.910__.
+
+To reproduce the prediction, one needs to run the script run.py with the correct architecture (mentionned above). To do the data augmentation and train the model one simply needs to decomment the lines in run.py: 
+
+-data.augment_split()
+-Train.main_train()
