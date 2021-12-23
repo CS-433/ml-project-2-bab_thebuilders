@@ -10,8 +10,8 @@ This is the repository containing the proposed solution of the team _BAB-thebuil
 - The dataset is available on the aicrowd.com page [here](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation/dataset_files).
 - The bulk of our python functions are in the folder **source**. Detailed explanations are available inside it.
 
-## Pre-trained model
-The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing). 
+## Model
+The model already computed is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing). 
 
 The path for the model has to be source/files/model.h5. The test files also need to be in a specific path: /source/test/images/test_"image_id".png
 
