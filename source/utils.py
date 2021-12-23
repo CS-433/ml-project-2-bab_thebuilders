@@ -46,7 +46,6 @@ def shuffling(x, y):
     return x, y
 
 def load_model_weight(path):
-    ''' KEKOI ???'''
     with CustomObjectScope({
         'dice_loss': dice_loss,
         'dice_coef': dice_coef,
