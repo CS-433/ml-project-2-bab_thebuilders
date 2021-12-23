@@ -109,7 +109,6 @@ def mask_to_submission_strings(image_filename,i,foreground_threshold):
     im = mpimg.imread(image_filename)
     patch_size = 16
     reduced_size = im.shape[0]/patch_size
-    print(reduced_size)
     reduced_image = np.zeros((int(reduced_size),int(reduced_size)))
     
     # read the image and fill the black squares
