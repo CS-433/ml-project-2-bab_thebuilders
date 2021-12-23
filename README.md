@@ -11,9 +11,7 @@ This is the repository containing the proposed solution of the team _BAB-thebuil
 - The bulk of our python functions are in the folder **source**. Detailed explanations are available inside it.
 
 ## Pre-trained model
-The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing) along side with the training and test data. 
-
-The .zip in the drive just has to be unzipped in the ml-project-2-bab_thebuilders/source/ directory and should have the right architecture.
+The pre-trained model is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing). 
 
 The path for the model has to be source/files/model.h5. The test files also need to be in a specific path: /source/test/images/test_"image_id".png
 
@@ -27,3 +25,8 @@ To reproduce the prediction, one needs to run the script run.py with the correct
 -data.augment_split()
 
 -Train.main_train()
+
+### Required libraries :
+- `cv2` : pip install opencv-python
+- `Tensorflow` : pip install tensorflow
+- 
