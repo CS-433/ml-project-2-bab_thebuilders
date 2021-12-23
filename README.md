@@ -16,4 +16,4 @@ The pre-trained model is too voluminous to be stored on GitHub. Instead, it is a
 The path for the model has to be source/files/model.h5. The test files also need to be in a specific path: "source/test/images/test_" image_id ".png" , as well as the training data: "source/training_sat_images/images/satImage_" image_id ".png" for the images and "source/training_sat_images/masks/satImage_" mask_id ".png".
 
 ## How to run the code 
-Note that the provided files do not allow one to reproduce our _best_ submission on AICrowd, since the file containing the corresponding model has been lost. The provided files allow one to reproduce the second best submission we made (id 169569), which had an F-1 score of __0.834__ and a precision of __0.910__.
+Note that the provided files do not allow one to reproduce our _best_ submission on AICrowd, since the file containing the corresponding model has been lost. The provided files allow one to reproduce the second best submission we made (ID 169569), which had an F-1 score of __0.834__ and a precision of __0.910__.
