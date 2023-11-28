@@ -9,6 +9,7 @@ This is the repository containing the proposed solution of the team _BAB-thebuil
 ## Repository description
 - The dataset is available on the aicrowd.com page [here](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation/dataset_files).
 - The bulk of our python functions are in the folder **source**. Detailed explanations are available inside it.
+- The paper summarizing our approach and findings is "Road_Segmentation_Project.pdf".
 
 ## Model
 The model already computed is too voluminous to be stored on GitHub. Instead, it is available [here](https://drive.google.com/drive/folders/1VrlhBvzDyHwNom-jpgtSr4l86XyrQc1W?usp=sharing). 
